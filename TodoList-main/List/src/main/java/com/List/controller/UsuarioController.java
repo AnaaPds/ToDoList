@@ -10,17 +10,21 @@ import java.util.List;
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
-    private final UsuarioService usuarioService;
+    // Declara o serviço de usuários
+    public UsuarioService usuarioService;
 
+    // Construtor que injeta o serviço de usuários
     public UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
     }
 
+    // Método GET para listar todos os usuários
     @GetMapping
     public List<Usuario> listarUsuarios() {
         return usuarioService.listarUsuarios();
     }
 
+    // Método GET para buscar um usuário pelo ID
     @GetMapping("/{id}")
     public Usuario buscarUsuarioPorId(@PathVariable Long id) {
         return usuarioService.buscarUsuarioPorId(id);
