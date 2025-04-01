@@ -6,16 +6,19 @@ import jakarta.persistence.*;
 @Table(name = "tb_usuario")
 public class Usuario {
 
+        // ID do usuário, gerado automaticamente
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
         private String nome;
         private String email;
 
+        //Construtor vazio
         public Usuario(){
 
         }
 
+        //Construtor com todos os parâmetros
     public Usuario(Long id, String nome, String email) {
         this.id = id;
         this.nome = nome;
