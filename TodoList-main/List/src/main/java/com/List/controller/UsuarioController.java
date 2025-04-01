@@ -31,6 +31,7 @@ public class UsuarioController {
     }
 
 
+    // Método POST para criar um novo usuário, recebendo os dados no corpo da requisição
     @PostMapping
     public Usuario criarUsuario(@RequestBody Usuario usuario) {
         return usuarioService.salvarUsuario(usuario);
