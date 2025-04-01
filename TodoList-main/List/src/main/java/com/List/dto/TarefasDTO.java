@@ -8,16 +8,19 @@ import java.time.LocalDateTime;
 
 public class TarefasDTO {
 
+     // Atributos que correspondem aos dados da tarefa
     private String descricao;
     private String setor;
     private Prioridade prioridade;
-    private LocalDateTime dataCadastro = LocalDateTime.now();
+    private LocalDateTime dataCadastro = LocalDateTime.now(); // Data de cadastro com valor padrão
     private Status status;
 
+    //Construtor vazio
     public TarefasDTO(){
 
     }
 
+    // Construtor com todos os parâmetros
     public TarefasDTO(String descricao, String setor,
                       Prioridade prioridade, LocalDateTime dataCadastro,
                       Status status) {
@@ -28,6 +31,7 @@ public class TarefasDTO {
         this.status = status;
     }
 
+    // Construtor que converte um objeto Tarefas em TarefasDTO
     public TarefasDTO(Tarefas tarefas){
         this.descricao = tarefas.getDescricao();
         this.setor = tarefas.getSetor();
@@ -36,6 +40,7 @@ public class TarefasDTO {
         this.status = tarefas.getStatus();
     }
 
+    // Getters e setters para cada atributo
     public String getDescricao() {
         return descricao;
     }
