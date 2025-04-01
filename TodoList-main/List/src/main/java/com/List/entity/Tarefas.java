@@ -8,10 +8,12 @@ import java.time.LocalDateTime;
 @Table(name = "tb_tarefa")
 public class Tarefas {
 
+    // ID da tarefa, gerado automaticamente
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // Relacionamento ManyToOne com o usuário, muitas tarefas pode pertencer a um usuário
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
@@ -22,10 +24,12 @@ public class Tarefas {
     private Status status = Status.A_FAZER;
 
 
+   // Construtor vazio
     public Tarefas(){
 
     }
 
+    // Construtor com todos os parâmetros
     public Tarefas(Long id, Usuario usuario, String descricao, String setor,
                    Prioridade prioridade,
                    LocalDateTime dataCadastro, Status status) {
@@ -38,6 +42,7 @@ public class Tarefas {
         this.status = status;
     }
 
+    //Gerar os Getters e Setters
     public Long getId() {
         return id;
     }
