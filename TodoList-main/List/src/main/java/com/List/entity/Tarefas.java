@@ -15,13 +15,13 @@ public class Tarefas {
 
     // Relacionamento ManyToOne com o usuário, muitas tarefas pode pertencer a um usuário
     @ManyToOne
-    @JoinColumn(name = "usuario_id", nullable = false)
+    @JoinColumn(name = "usuario_id", nullable = false) // Define a coluna 'usuario_id' na tabela, com restrição para não ser nula
     private Usuario usuario;
     private String descricao;
     private String setor;
     private Prioridade prioridade;
-    private LocalDateTime dataCadastro = LocalDateTime.now();
-    private Status status = Status.A_FAZER;
+    private LocalDateTime dataCadastro = LocalDateTime.now(); // Define a data de cadastro com o valor atual (hora e data no momento da criação)
+    private Status status = Status.A_FAZER; // Define o status inicial como "A_FAZER"
 
 
    // Construtor vazio
