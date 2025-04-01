@@ -25,6 +25,7 @@ public class UsuarioService {
     // Método para buscar um usuário por ID
     public Usuario buscarUsuarioPorId(Long id) {
         return usuarioRepository.findById(id).orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+        // Método para buscar um usuário pelo ID. Se não encontrado, lança uma exceção.
     }
 
 
